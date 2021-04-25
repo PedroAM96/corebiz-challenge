@@ -1,10 +1,21 @@
-import React from 'react';
+import { Header } from './components/header';
+import { Carousel } from './components/carousel'
+import { BestSelling } from './components/bestSelling';
+import { Newsletter } from './components/newsletter'
+import { Footer } from './components/footer';
+
+import { GlobalStyle } from './styles/global';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello world</h1>
-    </div>
+    <>
+      <Header />
+      <Carousel />
+      <BestSelling />
+      <Newsletter />
+      <Footer />
+      <GlobalStyle />
+    </>
   );
 }
 
