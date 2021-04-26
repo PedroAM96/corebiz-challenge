@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
 
-    /* html {
+    html {
         @media (max-width: 1080px) {
             font-size: 93.75%;
         }
@@ -23,7 +23,15 @@ export const GlobalStyle = createGlobalStyle`
         @media (max-width: 720px) {
             font-size: 87.5%;
         }
-    } */
+
+        /* @media (max-width: 600px) {
+            font-size: 83.75%;
+        }
+
+        @media (max-width: 320px) {
+            font-size: 77.5%;
+        } */
+    }
 
     body {
         -webkit-font-smooth: antialiased;    

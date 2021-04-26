@@ -12,7 +12,7 @@ import {
     CartContent,
 } from './styles'
 
-export function Header() {
+export function Header({ cartItems }) {
     return (
         <Container>
             <Content>
@@ -28,7 +28,7 @@ export function Header() {
                     </UserContent>
                     <CartContent>
                         <img src={iconCart} title="Meu carrinho" alt="Ícone de carrinho de compras" />
-                        <div>1</div>
+                        <div>{cartItems}</div>
                     </CartContent>
                 </UserContainer>
             </Content>

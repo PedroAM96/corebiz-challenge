@@ -71,7 +71,7 @@ export const SearchContainer = styled.div`
     @media screen and (max-width: 600px) {  
         background-color: #F6F6F6;
         border-radius: 25px;
-        margin: 0.5rem 0;
+        margin: 0;
         padding: 0.5rem 1rem;
         border: 1px solid #B1B1B1;
 
@@ -112,6 +112,7 @@ export const UserContent = styled.div`
     }
 
     @media screen and (max-width: 600px) {
+        margin: 0;
 
         img {
             width: 2.5rem;
@@ -129,7 +130,7 @@ export const UserContent = styled.div`
 export const CartContent = styled.div`
     display: flex;
     width: max-content;
-    margin: 0 0 0 1rem;
+    margin: 0 1rem 0 1rem;
     cursor: pointer;
 
     img {
@@ -137,6 +138,8 @@ export const CartContent = styled.div`
     }
 
     div {
+        display: flex;
+        flex-direction: column;
         font-size: 0.53rem;
         font-weight: 700;
         color: #FFF;
@@ -144,6 +147,7 @@ export const CartContent = styled.div`
         text-align: center;
         vertical-align: middle;
         align-self: center;
+        justify-content: center;
 
         background-color: var(--red);
         border-radius: 50%;
@@ -156,7 +160,7 @@ export const CartContent = styled.div`
     }
 
     @media screen and (max-width: 600px) {  
-        margin: 0;
+        margin: 0 1rem 0 1rem;
 
         img {
             width: 2.5rem;
@@ -171,8 +175,6 @@ export const CartContent = styled.div`
             position: absolute;
             width: 1.6rem;
             height: 1.6rem;
-            /* top: 0;
-            right: 1rem; */
             transform: translate(2rem, -1rem);
             font-size: 1rem;
         } 

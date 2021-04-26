@@ -8,6 +8,11 @@ import {
 } from "./styles";
 
 export function Carousel() {
+
+        // useEffect(() => {
+    //     api('/newsletter')
+    //         .then(data => console.log(data))
+    // }, []);
     return (
         <>
             <Container>
