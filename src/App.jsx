@@ -9,20 +9,21 @@ import { useState } from 'react';
 
 function App() {
   const [cartItems, setCartItems] = useState(() => {
-    const counter = Number(localStorage.getItem('@Corebiz:Items'));
+    const counter = Number(localStorage.getItem('corebiz__cart_items_counter'));
     if (counter) { return counter; } return 0;
   });
 
-  function handleAddCart() {
+  function handleAddItem() {
     setCartItems(cartItems + 1);
-    localStorage.setItem('@Corebiz:Items', cartItems + 1);
+
+    localStorage.setItem('corebiz__cart_items_counter', cartItems + 1);
   }
 
   return (
     <>
       <Header cartItems={cartItems} />
       <Carousel />
-      <BestSelling addCart={handleAddCart} />
+      <BestSelling addItemToCart={handleAddItem} />
       <Newsletter />
       <Footer />
       <GlobalStyle />

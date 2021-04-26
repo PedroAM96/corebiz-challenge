@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Container = styled.header`
     position: sticky;
-    width: 100vw;
     height: 80px;
     background: #FFF;
     left: 0px;

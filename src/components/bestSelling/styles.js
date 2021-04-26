@@ -177,6 +177,10 @@ export const CardInstallments = styled.p`
     font-weight: 400;
     font-size: 0.7rem;
     color: #7A7A7A;
+
+    @media screen and (max-width: 400px) {
+        white-space: nowrap;
+    }
 `
 export const Off = styled.img`
     position: absolute;

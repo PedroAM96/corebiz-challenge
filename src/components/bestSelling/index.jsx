@@ -39,7 +39,7 @@ function valueInBRL(value) {
     return valueBRL;
 };
 
-export function BestSelling({ addCart }) {
+export function BestSelling({ addItemToCart }) {
     const [items, setItems] = useState([]);
   
     useEffect(() => {
@@ -115,7 +115,7 @@ export function BestSelling({ addCart }) {
                                         )}
                                         <button
                                             type="button"
-                                            onClick={addCart}
+                                            onClick={addItemToCart}
                                         >
                                             COMPRAR
                                         </button>
@@ -145,7 +145,7 @@ export function BestSelling({ addCart }) {
 }
 
 BestSelling.propTypes = {
-    addCart: PropTypes.func.isRequired,
+    addItemToCart: PropTypes.func.isRequired,
 };
 
 export default BestSelling;

@@ -55,4 +55,39 @@ export const GlobalStyle = createGlobalStyle`
         opacity: 0.6;
         cursor: not-allowed;
     }
+
+    .carousel-item {
+        overflow: hidden;
+    }
+
+    .carousel-dots {
+        position: absolute;
+        transform: translateY(-60px);
+        z-index: 9;
+    }
+
+    .carousel-dots li.carousel-dots-active button::before {
+        color: var(--red);
+        opacity: 1;
+    }
+
+    .carousel-dots {
+        li {
+            button::before {
+                color: #BDBDBD;
+                opacity: 1;
+            }
+        }
+    }
+
+    @media screen and (max-width: 800px) {
+        .carousel-dots {
+        li {
+            button::before {
+                color: white;
+                opacity: 1;
+            }
+        }
+    }
+    }
 ` 
