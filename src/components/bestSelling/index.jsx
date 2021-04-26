@@ -29,12 +29,13 @@ import { useEffect, useState } from 'react';
 import api from '../../services/api';
 
 function valueInBRL(value) {
-    if(value && value != 0) {
+    var valueBRL;
+    if(value && value !== 0) {
         var formatDecimals = value/100;
-        var valueBRL = formatDecimals.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+        valueBRL = formatDecimals.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
         console.log(valueBRL);
     } else {
-        var valueBRL = null;
+        valueBRL = null;
     }
     return valueBRL;
 };
@@ -125,7 +126,7 @@ export function BestSelling({ addItemToCart }) {
                         }
                         <Dots>
                             <div>
-                            <a></a>
+                            <p></p>
                             <div></div>
                             <div></div>
                             <div></div>

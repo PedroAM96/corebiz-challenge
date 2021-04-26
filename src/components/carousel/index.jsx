@@ -43,7 +43,7 @@ export function Carousel() {
                     <img src={imgCarousel02} alt="Carinho de compras"/>
                     <div>
                         <p>O que é um site de E-commerce?</p>
-                        <p>Loja online, comércio eletrônico ou e-commerce?</p>
+                        <p>Loja online ou comércio eletrônico?</p>
                     </div>
                 </SliderContent>
                 <SliderContent>

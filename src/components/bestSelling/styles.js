@@ -198,29 +198,29 @@ export const Dots = styled.div`
     top: 97%;
     right: 35%;
 
+    p {
+            width: 0.5rem;
+            height: 0.5rem;
+            margin: 0 0.5rem;
+            border-radius: 0.5rem;
+            background-color: var(--red);
+            cursor: pointer;
+        }
+
     div {
-        width: 0.5rem;
-        height: 0.5rem;
-        margin: 0 0.5rem;
-        border-radius: 0.5rem;
-        background-color: #BDBDBD;
-        cursor: pointer;
-    }
-
-    a {
-        width: 0.5rem;
-        height: 0.5rem;
-        margin: 0 0.5rem;
-        border-radius: 0.5rem;
-        background-color: var(--red);
-        cursor: pointer;
-    }
-
-    > div {
         display: flex;
         flex-direction: row;
         width: max-content;
         background-color: transparent;
+
+        div {
+            width: 0.5rem;
+            height: 0.5rem;
+            margin: 0 0.5rem;
+            border-radius: 0.5rem;
+            background-color: #BDBDBD;
+            cursor: pointer;
+        }
     }
 
     @media screen and (max-width: 400px) {
