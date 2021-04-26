@@ -8,9 +8,11 @@ export const Container = styled.div`
     margin: 0 auto;
     padding: 1.5rem;
     align-items: center;
+    justify-content: center;
 
     @media screen and (max-width: 760px) {
         height: 286px;
+        padding-top: 3rem;
     }
 `
 
@@ -24,7 +26,7 @@ export const Title = styled.div`
     color: #333333;
 
     @media screen and (max-width: 760px) {
-        font-size: 1rem;
+        padding-bottom: 1rem;
     }
 `
 
@@ -85,6 +87,49 @@ export const InputContainer = styled.div`
     }
 
     @media screen and (max-width: 760px) {
-        margin-bottom: 2rem;
+        margin-bottom: 1.8rem;
+    }
+`
+
+export const Feedback = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+
+    p {
+        font-weight: 700;
+        font-size: 0.825rem;
+    }
+
+    p + p {
+        font-weight: 400;
+        font-size: 0.7rem;
+        padding-bottom: 1rem;
+    }
+
+    button {
+        width: 320px;
+        height: 48px;
+        background-color: #000000;
+        border-radius: 5px;
+        font-family: Lato;
+        font-weight: 700;
+        font-size: 0.825rem;
+        margin: 0.25rem;
+        color: #FFF;
+
+        &:hover{
+            background-color: #333333;
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        p {
+            text-align: center;
+        }
+        button {
+            width: 240px;
+        }
     }
 `

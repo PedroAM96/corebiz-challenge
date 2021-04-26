@@ -14,10 +14,7 @@ import Slider from 'infinite-react-carousel';
 
 import { 
     Container,
-    TextContainer,
-    IndexContainer,
-    SliderContent,
-    SliderText
+    SliderContent
 } from "./styles";
 
 export function Carousel() {

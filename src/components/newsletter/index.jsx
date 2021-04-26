@@ -6,12 +6,14 @@ import {
     Container,
     Title,
     NewsForm,
-    InputContainer
+    InputContainer,
+    Feedback
 } from "./styles";
 
 export function Newsletter() {
 
     const [name, setName] = useState('');
+    const [feedback, setFeedback] = useState('');
     const [email, setEmail] = useState('');
     const [errorName, setErrorName] = useState('');
     const [errorEmail, setErrorEmail] = useState('');
@@ -25,6 +27,10 @@ export function Newsletter() {
         setEmail('');
         setErrorName('');
         setErrorEmail('');
+    }
+
+    function handleNewEmail() {
+        setFeedback(false);
     }
 
     async function handleNewsletter(event) {
@@ -48,7 +54,7 @@ export function Newsletter() {
             });
 
             newsPost(data);
-            alert(`Cadastro no email ${email} realizado com sucesso!`);
+            setFeedback(true);
             clearInput();
 
         } catch (err) {
@@ -65,42 +71,56 @@ export function Newsletter() {
         }
     }
 
+
+
     return (
         <Container>
+            {!feedback && 
+            <>
             <Title>Participe de nossas news com promoções e novidades!</Title>
-            <NewsForm onSubmit={handleNewsletter}>
-                <InputContainer withError={errorName}>
-                    <input
-                        type="text"
-                        placeholder="Digite seu nome"
-                        value={name}
-                        onChange={
-                            event => {
-                                setName(event.target.value);
-                                setErrorName('');
+                <NewsForm onSubmit={handleNewsletter}>
+                    <InputContainer withError={errorName}>
+                        <input
+                            type="text"
+                            placeholder="Digite seu nome"
+                            value={name}
+                            onChange={
+                                event => {
+                                    setName(event.target.value);
+                                    setErrorName('');
+                                }
                             }
-                        }
-                    />
-                    {errorName && <p>{errorName}</p>}
-                </InputContainer>
-                <InputContainer withError={errorEmail}>
-                    <input
-                        type="text"
-                        placeholder="Digite seu email"
-                        value={email}
-                        onChange={
-                            event => {
-                                setEmail(event.target.value);
-                                setErrorEmail('');
+                        />
+                        {errorName && <p>{errorName}</p>}
+                    </InputContainer>
+                    <InputContainer withError={errorEmail}>
+                        <input
+                            type="text"
+                            placeholder="Digite seu email"
+                            value={email}
+                            onChange={
+                                event => {
+                                    setEmail(event.target.value);
+                                    setErrorEmail('');
+                                }
                             }
-                        }
-                    />
-                    {errorEmail && <p>{errorEmail}</p>}
-                </InputContainer>
-                <button type="submit">
-                    Eu quero!
-                </button>
-            </NewsForm>
+                        />
+                        {errorEmail && <p>{errorEmail}</p>}
+                    </InputContainer>
+                    <button type="submit">
+                        Eu quero!
+                    </button>
+
+                </NewsForm>
+            </>}
+            {feedback  && 
+            <>
+                <Feedback>
+                    <p>Seu e-mail foi cadastrado com sucesso!</p>
+                    <p>A partir de agora você receberá as novidade e ofertas exclusivas.</p>
+                    <button type="button" onClick={handleNewEmail}>Cadastrar novo e-mail</button>
+                </Feedback>
+            </>}
         </Container>
     )
 }

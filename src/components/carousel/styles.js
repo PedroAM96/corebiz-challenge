@@ -7,34 +7,13 @@ export const Container = styled.div`
 
     @media screen and (max-width: 800px) {
         background-color: transparent;
+        height: 300px;
     }
 
-`
-
-export const SliderText = styled.p`
-    position: absolute;
-    top: 14rem;
-    left: 5rem;
-    max-width: 460px;
-    color: #FFF;
-    line-height: 3rem;
-    font-weight: 900;
-    font-size: 2.8rem;
-`
-
-export const IndexContainer = styled.div`
-    position: absolute;
-    display: flex;
-    top: 50%;
-    right: 50%;
-
-    div {
-        width: 0.6rem;
-        height: 0.6rem;
-        margin: 0.5rem;
-        background-color: red;
-        border-radius: 2rem; 
+    @media screen and (max-width: 400px) {
+        height: 200px;
     }
+
 `
 
 export const SliderContent = styled.div`
@@ -110,6 +89,12 @@ export const SliderContent = styled.div`
     }
 
     @media screen and (max-width: 800px) {
+        height: 300px;
+
+        div {
+            margin-bottom: 2rem;
+        }
+
         p {
             font-size: 1.2rem;
             text-shadow: 1px 1px 2px black;
@@ -131,12 +116,14 @@ export const SliderContent = styled.div`
         }
 
         img + img {
-            left: 0;
-            filter: blur(0.3rem)            
+            left: 0; 
+            filter: brightness(50%);   
         }
     }
 
     @media screen and (max-width: 400px) {
+        height: 200px;
+
         p {
             font-size: 1rem;
             max-width: 320px;

@@ -9,6 +9,7 @@ export const Container = styled.header`
     z-index: 10;
 
     @media screen and (max-width: 600px) {   
+        position: relative;
         height: 140px;
     }
 `

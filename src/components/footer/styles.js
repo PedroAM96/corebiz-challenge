@@ -10,7 +10,7 @@ export const Container = styled.footer`
     }
 
     @media screen and (max-width: 550px) {  
-        height: 420px;
+        height: 360px;
     }
 `
 
@@ -125,5 +125,9 @@ export const LogoContent = styled.div`
     p {
         font-size: 0.65rem;
         color: #FFF;
+    }
+
+    @media screen and (max-width: 550px) {  
+        padding: 0.2rem 2rem;
     }
 `
