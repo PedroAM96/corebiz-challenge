@@ -33,7 +33,6 @@ function valueInBRL(value) {
     if(value && value !== 0) {
         var formatDecimals = value/100;
         valueBRL = formatDecimals.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
-        console.log(valueBRL);
     } else {
         valueBRL = null;
     }
@@ -45,7 +44,6 @@ export function BestSelling({ addItemToCart }) {
   
     useEffect(() => {
       api.get('products').then(response => {
-        console.log(response.data);
         setItems(
           response.data.map(item => {
             return {
@@ -74,15 +72,18 @@ export function BestSelling({ addItemToCart }) {
     }
 
     function createStarsRating(starCount) {
-        const star = <img src={iconStar} alt="Estrela preenchida"/>;
-        const starOut = <img src={iconStarOut} alt="Estrela vazia"/>;
         const starHtml = [];
 
         for (let i = 0; i < 5; i++) {
-            if(i < starCount)
+            if(i < starCount) {
+                const key = `star${i}`;
+                const star = <img key={key} src={iconStar} alt="Estrela preenchida"/>;
                 starHtml.push(star);
-            else
+            } else {
+                const key = `staroutline${i}`;
+                const starOut = <img key={key} src={iconStarOut} alt="Estrela vazia"/>;
                 starHtml.push(starOut);
+            }
         }
 
         return starHtml;
@@ -101,7 +102,7 @@ export function BestSelling({ addItemToCart }) {
                     <CardContainer>
                         {
                             items.map(item => (
-                                <Card>
+                                <Card key={item.productId}>
                                     <img src={item.imageUrl} alt={item.productName}/>
                                     {item.listPriceBRL !== null && (
                                         <Off src={flagOFF} alt="OFF"/>
